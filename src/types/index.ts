@@ -38,3 +38,15 @@ export interface IBid {
 export interface IOrderResult {
     id: string;
 }
+
+export type IBasketItem = Pick<ILot, 'id' | 'title' | 'price'> & {
+	isMyBid: boolean;
+};
+
+export interface IAppState {
+	catalog: ILot[];
+	basket: string[];
+	preview: string | null;
+	order: IOrder | null;
+	loading: boolean;
+}
